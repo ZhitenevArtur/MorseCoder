@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 16px;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+}
+
+h1{
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+.wrap{
+	display: flex;
+	flex-direction: column;
+	width: 80vw;
+	margin: 0 auto;
+}
+
+.title{
+	text-align: center;
+}
+
+textarea{
+	font-family: 'Raleway', sans-serif;
+	border: none;
+	font-size: 3rem;
+	resize: vertical;
+	overflow: auto;
+	outline: none;
+}
+
+.svg{
+	width: 64px;
+	height: 64px;
+	margin: 70px auto;
+}

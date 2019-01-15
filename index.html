@@ -3,14 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Morzynka</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;subset=cyrillic" rel="stylesheet">
 	<!-- <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script> -->
 	<script language="javascript" type="text/javascript" src="morse.js"></script>
 	<script language="javascript" type="text/javascript" src="morseTable.js"></script>
 </head>
 <body>
-	<h1>Морзянка</h1>
-	<input type="text" id="inputForm">
-	<p>oninput: <span id="result"></span></p>
+	<div class="wrap">
+		<h1 class="title">Морзянка</h1>
+		<!-- <input type="text" id="inputForm" placeholder="Введите текст..."> -->
+		<textarea autofocus id="inputForm" placeholder="Введите текст..."></textarea>
+		<object
+			type="image/svg+xml"
+			data="telegraph.svg"
+			class="svg">
+		</object>
+		<textarea id="result" placeholder="•-- •-- • -•• •• - • - • -•- ••• - •••••• •••••• ••••••"></textarea>
+	</div>
+	
 
 </body>
 </html>
