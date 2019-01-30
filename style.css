@@ -31,11 +31,11 @@ h1{
 
 textarea{
 	font-family: 'Raleway', sans-serif;
-	border: none;
 	font-size: 3rem;
 	resize: vertical;
 	overflow: auto;
 	outline: none;
+	border: none;
 }
 
 .svg{
