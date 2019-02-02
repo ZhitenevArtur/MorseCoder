@@ -1,0 +1,3 @@
+For MORSE TO TEXT case:
+ one space between symbols
+ two spaces or '/' for space between words
