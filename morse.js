@@ -1,15 +1,26 @@
+var isMorseMode = true;
+var isLatinMode = true;
+
 window.onload = function(){
-	document.getElementById('morseInputForm').setAttribute("placeholder", textToMorse(document.getElementById('textInputForm').getAttribute("placeholder")));
+	document.getElementById('outputForm').setAttribute("placeholder", 
+		textToMorse(document.getElementById('inputForm').getAttribute("placeholder")));
 	
-	var inputText = document.getElementById('textInputForm');
-	var inputMorse = document.getElementById('morseInputForm');
+	var inputText = document.getElementById('inputForm');
+	var inputMorse = document.getElementById('outputForm');
 
 	inputText.oninput = function() {
-		document.getElementById('morseInputForm').innerHTML = textToMorse(inputText.value);
+		document.getElementById('outputForm').value = textToMorse(inputText.value);
+		autosize(inputForm);
+		autosize(outputForm);
 	}
-	inputMorse.oninput = function() {
-		document.getElementById('textInputForm').innerHTML = morseToText(inputMorse.value);
-	}
+}
+
+//via Yair Even Or https://codepen.io/vsync/pen/czgrf
+function autosize(elem){
+	setTimeout(function(){
+		elem.style.cssText = 'height:auto; padding:0';
+		elem.style.cssText = 'height:' + elem.scrollHeight + 'px';
+	},0);
 }
 
 function textToMorse (string) {
@@ -43,3 +54,31 @@ function morseToText (string) {
 	}
 	return textString;
 }
+
+function swapInputs () {
+	isMorseMode = !isMorseMode;
+
+	var temp = document.getElementById('inputForm').getAttribute("placeholder");
+	document.getElementById('inputForm').setAttribute("placeholder", 
+		document.getElementById('outputForm').getAttribute("placeholder"));
+	document.getElementById('outputForm').setAttribute("placeholder", temp);
+
+	temp = document.getElementById('inputForm').value;
+	document.getElementById('inputForm').value = document.getElementById('outputForm').value;
+	document.getElementById('outputForm').value = temp;
+}
+
+/* TO DO
+	Main page
+		-!!Swap position on the screen for user inputs!!-
+		-!!Auto expanding text area!!-
+		Two modes of translator (eng/rus)
+		Sounds for Morse code
+
+	About Morse page
+		Page with information about Samuel Morse, how whole system was made, russian Morse alphabet, etc.
+
+	Learning page
+		Learning system for letters(eng/rus), numbers, signs
+	
+*/

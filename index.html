@@ -7,21 +7,26 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;subset=cyrillic" rel="stylesheet">
 	<!-- <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script> -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script language="javascript" type="text/javascript" src="morse.js"></script>
 	<script language="javascript" type="text/javascript" src="morseTable.js"></script>
+
 </head>
 <body>
 	<div class="wrap">
 		<h1 class="title">Морзянка</h1>
 		<!-- <input type="text" id="inputForm" placeholder="Введите текст..."> -->
-		<textarea autofocus id="textInputForm" placeholder="Введите текст..."></textarea>
+		<textarea autofocus id="inputForm" placeholder="Введите текст..." ></textarea>
 		<div id="error_block"></div>
+		<input value="Swap" onclick="swapInputs()" type="button">
 		<object
 			type="image/svg+xml"
 			data="telegraph.svg"
 			class="svg">
 		</object>
-		<textarea id="morseInputForm" ></textarea>
+		<input value="Sound" onclick="" type="button">
+		<textarea id="outputForm"></textarea>
+		<!-- <div id="outputForm"></div> -->
 	</div>
 	
 

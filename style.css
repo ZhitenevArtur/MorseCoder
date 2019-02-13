@@ -32,7 +32,7 @@ h1{
 textarea{
 	/*font-family: 'Raleway', sans-serif;*/
 	font-size: 3rem;
-	resize: vertical;
+	resize: none;
 	overflow: auto;
 	outline: none;
 	border: none;
