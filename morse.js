@@ -1,4 +1,4 @@
-var isMorseMode = true;
+var isTextMode = true;
 var isLatinMode = true;
 
 window.onload = function(){
@@ -56,7 +56,7 @@ function morseToText (string) {
 }
 
 function swapInputs () {
-	isMorseMode = !isMorseMode;
+	isTextMode = !isTextMode;
 
 	var temp = document.getElementById('inputForm').getAttribute("placeholder");
 	document.getElementById('inputForm').setAttribute("placeholder", 
