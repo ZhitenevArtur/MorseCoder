@@ -5,11 +5,16 @@ window.onload = function(){
 	document.getElementById('outputForm').setAttribute("placeholder", 
 		textToMorse(document.getElementById('inputForm').getAttribute("placeholder")));
 	
-	var inputText = document.getElementById('inputForm');
-	var inputMorse = document.getElementById('outputForm');
+	var inputFormElem = document.getElementById('inputForm');
+	var outputFormElem = document.getElementById('outputForm');
 
-	inputText.oninput = function() {
-		document.getElementById('outputForm').value = textToMorse(inputText.value);
+	inputFormElem.oninput = function() {
+		if(isTextMode){
+			document.getElementById('outputForm').value = textToMorse(inputFormElem.value);
+		}
+		else{
+			document.getElementById('outputForm').value = morseToText(inputFormElem.value);
+		}
 		autosize(inputForm);
 		autosize(outputForm);
 	}
