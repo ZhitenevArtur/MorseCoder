@@ -101,13 +101,3 @@ function swapInputs () {
 	document.getElementById('inputForm').value = document.getElementById('outputForm').value;
 	document.getElementById('outputForm').value = temp;
 }
-
-/* TO DO
-	Main page
-		-!!Swap position on the screen for user inputs!!-
-		-!!Auto expanding text area!!-
-		-!!Two modes of translator (eng/rus)!!-
-		Message about unsupported symbols
-		Sounds for Morse code
-		Page with information about Samuel Morse, how whole system was made, russian Morse alphabet, etc.
-*/

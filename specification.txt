@@ -1,3 +1,15 @@
 For MORSE TO TEXT case:
  one space between symbols
  seven spaces or ' / ' for space between words
+
+TO DO
+	Main page
+		---Swap position on the screen for user inputs
+		---Auto expanding text area
+		---Two modes of translator (eng/rus)
+		Symbols limit
+		Changing font size
+		Message about unsupported symbols
+		Telegraph icon animation
+		Sounds for Morse code
+		Page with information about Samuel Morse, how whole system was made, russian Morse alphabet, etc.
