@@ -8,7 +8,7 @@ window.onload = function(){
 	var inputFormElem = document.getElementById('inputForm');
 	var outputFormElem = document.getElementById('outputForm');
 
-	inputFormElem.oninput = function() {
+	inputFormElem.oninput = function (){
 		if(isTextMode){
 			document.getElementById('outputForm').value = textToMorse(inputFormElem.value);
 		}
@@ -17,6 +17,11 @@ window.onload = function(){
 		}
 		autosize(inputForm);
 		autosize(outputForm);
+	}
+
+	var checkbox = document.getElementById('chkbox');
+	checkbox.onchange = function (){
+		isLatinMode = !isLatinMode;
 	}
 }
 
@@ -31,31 +36,55 @@ function autosize(elem){
 function textToMorse (string) {
 	var morseString = '';
 	for (var i = 0; i < string.length; i++) {
-		if(!TABLE_OF_SYMBOLS[string[i].toLowerCase()]) alert(string[i] + " cannot be translated");
-		else{
+		if(string[i].toLowerCase() in TABLE_OF_SYMBOLS){
 			morseString+=TABLE_OF_SYMBOLS[string[i].toLowerCase()];
 			if(i!=string.length-1) morseString+=" ";
-		}	
+		}
+		else if(!TABLE_OF_SYMBOLS[string[i].toLowerCase()]) alert(string[i] + " cannot be translated");
 	}
 	return morseString;
 }
 
-function morseToText (string) {
+function morseToText(string) {
 	var textString = '';
-	var symbol = '';
+	var mWord = '';
+
 	for (var i = 0; i < string.length; i++) {
-		if(string[i]!=' ') symbol+=string[i];
-		if(string[i]==' ' || i == string.length-1){
-			if(!TABLE_OF_MCODES[string[i]]) alert(string[i] + " cannot be translated");
-			else{
-				textString+=TABLE_OF_MCODES[symbol];
-				symbol='';
-				if(~string.indexOf("  ", i-1)){
-					textString+=' ';
-					i++;
+		if (string[i]===' ' || i == string.length-1){
+			if(string[i]!=' '){
+				mWord+=string[i];
+			}
+
+			if(isLatinMode){
+				if(mWord in TABLE_OF_MCODES){
+					textString += TABLE_OF_MCODES[mWord];
 				}
-			}			
+			}
+			else{
+				if(mWord in TABLE_OF_MCODES_RUS){
+					textString += TABLE_OF_MCODES_RUS[mWord];
+				}
+			}
+			
+			if(string[i+1]===' ' && string[i+2]===' ' && 
+				string[i+3]===' ' && string[i+4]===' ' && 
+				string[i+5]===' ' && string[i+6]===' ') {
+				mWord = '/';
+				if(isLatinMode){
+					if(mWord in TABLE_OF_MCODES){
+						textString += TABLE_OF_MCODES[mWord];
+					}
+				}
+				else{
+					if(mWord in TABLE_OF_MCODES_RUS){
+						textString += TABLE_OF_MCODES_RUS[mWord];
+					}
+				}
+				i+=6;
+			}
+			mWord='';
 		}
+		else mWord+=string[i];
 	}
 	return textString;
 }
@@ -77,13 +106,8 @@ function swapInputs () {
 	Main page
 		-!!Swap position on the screen for user inputs!!-
 		-!!Auto expanding text area!!-
-		Two modes of translator (eng/rus)
+		-!!Two modes of translator (eng/rus)!!-
+		Message about unsupported symbols
 		Sounds for Morse code
-
-	About Morse page
 		Page with information about Samuel Morse, how whole system was made, russian Morse alphabet, etc.
-
-	Learning page
-		Learning system for letters(eng/rus), numbers, signs
-	
 */
