@@ -25,6 +25,11 @@ window.onload = function(){
 	}
 }
 
+window.onresize = function(){
+	autosize(inputForm);
+	autosize(outputForm);
+}
+
 //via Yair Even Or https://codepen.io/vsync/pen/czgrf
 function autosize(elem){
 	setTimeout(function(){

@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rus">
 <head>
 	<meta charset="UTF-8">
-	<title>Morzynka</title>
+	<title>Телеграфъ</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;subset=cyrillic" rel="stylesheet">
-	<!-- <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script> -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
 	<script language="javascript" type="text/javascript" src="morse.js"></script>
 	<script language="javascript" type="text/javascript" src="morseTable.js"></script>
 
 </head>
 <body>
-	<div class="wrap">
-		<h1 class="title">Морзянка</h1>
-		<textarea autofocus id="inputForm" placeholder="Введите текст..." ></textarea>
-		<div id="error_block"></div>
-		<input value="Swap" onclick="swapInputs()" type="button">
-		<object
-			type="image/svg+xml"
-			data="telegraph.svg"
-			class="svg">
-		</object>
-		<input type="checkbox" id="chkbox">
-		<input value="Sound" onclick="" type="button">
+	<header>
+		<div class="wrap flex">
+			<h1 class="logo">Телеграфъ</h1>
+			<object
+				type="image/svg+xml"
+				data="telegraph.svg"
+				class="logo big-icon">
+			</object>
+			<div class="controls">
+				<p>Служебные отметки</p>
+				<div class="icons flex">
+					<button type="button"
+							onclick="swapInputs()">
+						<img
+							src="swap.svg"
+							alt="Swap"
+							class="swap icon">
+					</button>
+					<button type="button"
+							onclick="">
+						<img
+							src="play.svg"
+							alt="Play"
+							class="play icon">
+					</button>
+
+					<div class="language slider"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="wrap flex">
+		<textarea class="input" autofocus  id="inputForm" placeholder="Введите текст..." maxlength="250"></textarea>
+	</div>
+	<div class="wrap flex">
 		<textarea id="outputForm"></textarea>
 	</div>
-	
+		
+
+<!-- <input type="checkbox" id="chkbox"> -->
+
 
 </body>
 </html>

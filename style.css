@@ -4,24 +4,29 @@
 }
 
 html{
+	font-family: 'PT Mono', monospace;
 	font-size: 16px;
 }
 
-body{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 3rem;
-}
-
 h1{
-	font-size: 4rem;
+	font-size: 4em;
 	font-weight: 500;
 }
 
 .wrap{
-	display: flex;
-	flex-direction: column;
-	width: 80vw;
+	width: 75vw;
 	margin: 0 auto;
+	border: 3px solid #40362D;
+	margin-top: 4vh;
+	padding: 2.5vh 0;
+
+	min-width: 400px;
+}
+
+.flex{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .title{
@@ -30,16 +35,47 @@ h1{
 }
 
 textarea{
-	/*font-family: 'Raleway', sans-serif;*/
-	font-size: 3rem;
+	width: 97%;
 	resize: none;
 	overflow: auto;
 	outline: none;
+	-moz-appearance: none;
 	border: none;
 }
 
-.svg{
+#inputForm{
+	font-size: 2.25em;
+	text-decoration: underline;
+}
+
+#outputForm{
+	font-size: 1.5em;
+}
+
+.big-icon{
 	width: 64px;
 	height: 64px;
-	margin: 70px auto;
+}
+
+.icon{
+	width: 32px;
+	height: 32px;
+}
+
+
+button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+button :hover{
+	border-radius: 3px;
+	background-color: #F2F2F2;
+}
+
+.controls{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
