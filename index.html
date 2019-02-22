@@ -35,8 +35,14 @@
 							alt="Play"
 							class="play icon">
 					</button>
-
-					<div class="language slider"></div>
+					<div class="flex no-wrap">
+						<span class="lang">eng</span>
+						<div class="checkbox">
+							<input type="checkbox" id="checkboxInput" />
+							<label for="checkboxInput"></label>
+						</div>
+						<span class="lang">rus</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -46,12 +52,7 @@
 		<textarea class="input" autofocus  id="inputForm" placeholder="Введите текст..." maxlength="250"></textarea>
 	</div>
 	<div class="wrap flex">
-		<textarea id="outputForm"></textarea>
+		<textarea class="output" id="outputForm"></textarea>
 	</div>
-		
-
-<!-- <input type="checkbox" id="chkbox"> -->
-
-
 </body>
 </html>

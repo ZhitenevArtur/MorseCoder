@@ -7,8 +7,8 @@ TO DO
 		---Swap position on the screen for user inputs
 		---Auto expanding text area
 		---Two modes of translator (eng/rus)
-		Symbols limit
-		Changing font size
+		---Symbols limit
+		---Changing font size
 		Message about unsupported symbols
 		Telegraph icon animation
 		Sounds for Morse code

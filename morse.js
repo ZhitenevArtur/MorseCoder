@@ -19,9 +19,10 @@ window.onload = function(){
 		autosize(outputForm);
 	}
 
-	var checkbox = document.getElementById('chkbox');
+	var checkbox = document.getElementById('checkboxInput');
 	checkbox.onchange = function (){
 		isLatinMode = !isLatinMode;
+		document.getElementById('outputForm').value = morseToText(inputFormElem.value);
 	}
 }
 
@@ -105,4 +106,13 @@ function swapInputs () {
 	temp = document.getElementById('inputForm').value;
 	document.getElementById('inputForm').value = document.getElementById('outputForm').value;
 	document.getElementById('outputForm').value = temp;
+
+	if(isTextMode){
+		document.getElementById('inputForm').className = 'input';
+		document.getElementById('outputForm').className = 'output';
+	}
+	else{
+		document.getElementById('outputForm').className = 'input';
+		document.getElementById('inputForm').className = 'output';
+	}
 }

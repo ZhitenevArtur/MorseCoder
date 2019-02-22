@@ -20,13 +20,18 @@ h1{
 	margin-top: 4vh;
 	padding: 2.5vh 0;
 
-	min-width: 400px;
+	min-width: 320px;
 }
 
 .flex{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	align-items: center;
+}
+
+.no-wrap{
+	flex-wrap: nowrap;
 }
 
 .title{
@@ -43,12 +48,13 @@ textarea{
 	border: none;
 }
 
-#inputForm{
+.input{
 	font-size: 2.25em;
 	text-decoration: underline;
+
 }
 
-#outputForm{
+.output{
 	font-size: 1.5em;
 }
 
@@ -60,6 +66,12 @@ textarea{
 .icon{
 	width: 32px;
 	height: 32px;
+}
+
+.icons{
+	margin-top: 5px;
+	width: 12.5vw;
+	min-width: 250px;
 }
 
 
@@ -77,5 +89,41 @@ button :hover{
 .controls{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	align-items: center;
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+.checkbox {
+	width: 32px;
+	height: 14px;
+	border-radius: 25px;
+	box-shadow: 0 0 0 2px black;
+	position: relative;
+
+	margin: 0 10px;
+}
+
+.checkbox label {
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	z-index: 1;
+	left: 3px;
+	box-shadow: 0 0 0 2px black;
+}
+
+.checkbox input[type=checkbox]:checked + label {
+	left: 20px;
+}
+
+.lang{
+	font-size: 0.8em;
 }
