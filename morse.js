@@ -116,3 +116,12 @@ function swapInputs () {
 		document.getElementById('inputForm').className = 'output';
 	}
 }
+
+function play () {
+	if(isTextMode){
+		playString(document.getElementById('outputForm').value);
+	}
+	else{
+		playString(document.getElementById('inputForm').value);
+	}
+}

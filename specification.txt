@@ -11,5 +11,5 @@ TO DO
 		---Changing font size
 		Message about unsupported symbols
 		Telegraph icon animation
-		Sounds for Morse code
+		---Sounds for Morse code
 		Page with information about Samuel Morse, how whole system was made, russian Morse alphabet, etc.
