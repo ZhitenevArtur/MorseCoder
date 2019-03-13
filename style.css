@@ -127,3 +127,9 @@ input[type=checkbox] {
 .lang{
 	font-size: 0.8em;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.wrap{
+		width: 100vw;
+	}
+}
